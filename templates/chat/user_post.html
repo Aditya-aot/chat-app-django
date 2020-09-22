@@ -1,0 +1,42 @@
+
+
+{% extends 'chat/base.html'%}
+{% block content %}
+
+
+<hr>
+<div class="container nav-wrapper">
+<ol>
+{% for chat in user_chat %}
+ <li>
+             <div class="card" style="width: 18rem;">
+
+              <div class="card-body">
+
+                <h5 class="card-title">{{ chat.content }}  </h5>
+                <p class="card-text">{{ chat.message}}</p>
+                  <p class="card-text">{{ chat.pub_date}}  </p>
+                        <form action="/deleteChat/{{chat.id}}/"
+                         style="display: inline;"
+                         method="post">{% csrf_token %}
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                         </form>
+                             <form action="/update_chat/{{chat.id}}/"
+                             style="display: inline;"
+                              method="post">{% csrf_token %}
+                             <input type="submit" value="Update" class="btn btn-warning">
+                             </form>
+
+
+
+              </div>
+            </div>
+
+             <hr>
+
+         </li>
+         {% endfor %}
+     </ol>
+</div>
+
+{% endblock content %}
