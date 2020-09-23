@@ -19,10 +19,7 @@ class ChatForm(ModelForm):
 
         ]
 
-    # fields = [
-    #   'first_name' ,
-    #   'last_name'
-
+ 
 
 #
 # ]
