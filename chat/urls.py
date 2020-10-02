@@ -7,6 +7,10 @@ from django.contrib.auth.models import  User
 #     path('', views.home, name='home'),
 #     # path('print', views.print, name='print'),
 # ]
+
+# this is a test comment
+
+
 urlpatterns = [
     path('chat/', views.chat_view , name='chat_view') ,
     path("deleteChat/<int:chat_id>/", views.delete_chat, name='delete_chat'),
