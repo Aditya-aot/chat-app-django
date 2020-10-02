@@ -19,13 +19,7 @@ class ChatForm(ModelForm):
 
         ]
 
-    # fields = [
-    #   'first_name' ,
-    #   'last_name'
 
-
-#
-# ]
 
 class RawCustomerForm(forms.Form):
     todo      = forms.CharField(label='', widget=forms.TextInput(attrs={"placeholder": "your first name"}))
