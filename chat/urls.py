@@ -6,12 +6,13 @@ from django.contrib.auth.models import  User
 # urlpatterns = [
 #     path('', views.home, name='home'),
 #     # path('print', views.print, name='print'),
-# ]
+# ] 
 
 # this is a test comment
 
 
 urlpatterns = [
+    path('', views.chat_view , name='chat_view') ,
     path('chat/', views.chat_view , name='chat_view') ,
     path("deleteChat/<int:chat_id>/", views.delete_chat, name='delete_chat'),
     path("like_chat/<int:pk>/", views.like_chat, name='like_chat'),
