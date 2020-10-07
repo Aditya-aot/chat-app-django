@@ -14,11 +14,7 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config
-import sentry_sdk
-sentry_sdk.init(
-    "https://27fbe9153a414a0daa6d095063831a42@o458484.ingest.sentry.io/5456108",
-    traces_sample_rate=1.0
-)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
