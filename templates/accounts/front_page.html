@@ -1,0 +1,63 @@
+{% extends 'chat/base.html'%}
+{% block content %}
+
+<div class="container nav-wrapper">
+
+<h1>Comments on chat....</h1>
+<hr>
+
+
+
+ <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                  <div class="alert alert-primary" role="alert">
+                    {{ chat_comment.user.username}}
+                 </div>
+                <h5 class="card-title">{{ chat_comment.content }}  </h5>
+                <p class="card-text">{{ chat_comment.message}}</p>
+                  <p class="card-text">{{ chat_comment.pub_date}}  </p>
+
+                  <form action="/like_chat/{{chat.pk}}/" method="post">
+                        {% csrf_token %}
+                      <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-primary btn-sm">
+                     {{ chat_comment.total_likes}}  </button>
+                  </form>
+                     </div>
+            </div>
+
+
+
+
+<div class="form-group">
+    <form action="" method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Add Comment</button>
+
+    </form>
+
+</div>
+
+ {% if not comment %}
+           No Comments yet..... <a href="#">Add One</a>
+{% else %}
+
+    <ol>
+    {% for comment in comment %}
+        <hr>
+        <br>
+           by :<strong>
+               {{ comment.chat.content }} <br>
+           </strong>
+           {{ comment.comment }} <br>
+           {{ comment.pub_date }}
+
+                   {% endfor %}
+     </ol>
+
+                    {% endif %}
+
+             </div>
+
+
+{% endblock content %}

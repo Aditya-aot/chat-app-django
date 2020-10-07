@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Full_chat
+from .models import Full_chat , Comment
 
 # Register your models here.
 
@@ -15,3 +15,5 @@ class TweetAdmin(admin.ModelAdmin) :
         model = Full_chat
 
 admin.site.register(Full_chat , TweetAdmin)
+
+admin.site.register(Comment)

@@ -14,12 +14,22 @@ class Full_chat(models.Model):
     # user = models.OneToOneField(User , null=True, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name="tweet_user" , blank=True )
     content = models.TextField()
+    follow = models.ManyToManyField(User, related_name="tweet_follow" , blank=True )
     message = models.TextField( null= True)
     images = models.ImageField(null=True , blank= True ,upload_to = "images/" )
     pub_date = models.DateTimeField(auto_now=False, auto_now_add=True, null=True)
 
     def total_likes(self):
         return self.likes.count()
-class Message(models.Model):
-    content = models.TextField()
+
+
+
+
+class Comment(models.Model):
+    chat = models.ForeignKey(Full_chat ,related_name="comments", on_delete= models.CASCADE)
+    comment = models.TextField(null=True, blank=True)
+    pub_date = models.DateTimeField(auto_now=False, auto_now_add=True, null=True)
+
+    def __aiter__(self):
+        return "%s - %s" % (self.chat.content , self.name)
 

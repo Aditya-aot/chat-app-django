@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Full_chat
+from .models import Full_chat , Comment
 
 
 class ChatForm(ModelForm):
@@ -14,12 +14,17 @@ class ChatForm(ModelForm):
         fields = [
             'content' ,
             'message' ,
-
             # 'images' ,
+ ]
 
-        ]
 
-
+class CommentForm(ModelForm):
+    comment =  forms.CharField(label='', widget=forms.TextInput(attrs={"placeholder": "Write your comment "}))
+    class Meta:
+        model = Comment
+        fields = [
+            # 'chat' ,
+            'comment' ,]
 
 class RawCustomerForm(forms.Form):
     todo      = forms.CharField(label='', widget=forms.TextInput(attrs={"placeholder": "your first name"}))
