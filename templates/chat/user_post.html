@@ -6,6 +6,7 @@
 
 <hr>
 <div class="container nav-wrapper">
+{% if user.is_authenticated %}
 <ol>
 
        <div class="alert alert-primary" role="alert">
@@ -41,6 +42,13 @@
          </li>
          {% endfor %}
      </ol>
+     {% else %}
+                 <a class="btn btn-warning" data-toggle="collapse" href="/accounts/login/" role="button" aria-expanded="false" aria-controls="/accounts/login/">
+                <h4>  You need to Login </h4>
+                   </a>
+          {% endif %}
 </div>
+
+
 
 {% endblock content %}

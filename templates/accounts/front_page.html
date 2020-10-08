@@ -27,7 +27,7 @@
 
 
 
-
+ {% if user.is_authenticated %}
 <div class="form-group">
     <form action="" method = "POST">
         {% csrf_token %}
@@ -37,6 +37,12 @@
     </form>
 
 </div>
+{% else %}
+                 <a class="btn btn-warning" data-toggle="collapse" href="/accounts/login/" role="button" aria-expanded="false" aria-controls="/accounts/login/">
+                  Login to Add Comment
+                   </a>
+          {% endif %}
+
 
  {% if not comment %}
            No Comments yet..... <a href="#">Add One</a>
