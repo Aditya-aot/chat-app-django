@@ -28,7 +28,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'ctko2mf2-m(0)sb4x@a-!gtu(&uabfg@-x&nds4ncgo3jj@v16'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['adi-chating-app.herokuapp.com','127.0.0.1']
 
