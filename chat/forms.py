@@ -23,7 +23,6 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = [
-            # 'chat' ,
             'comment' ,]
 
 class RawCustomerForm(forms.Form):
