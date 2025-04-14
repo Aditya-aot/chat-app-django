@@ -1,4 +1,6 @@
 # chat-app-django
+22-Sep-20
+
 To see the WebApp at https://adi-chating-app.herokuapp.com/
 as this webapp is hosted with the help of Heroku
 In this chat-APP there is auth(login/signup)  funtion for user .
